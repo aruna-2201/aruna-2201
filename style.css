@@ -1,71 +1,78 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  padding: 40px;
-  display: flex;
-  justify-content: center;
+/* Background image */
+.bg-image {
+  background-image: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1500&q=80');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.todo-container {
-  background: white;
-  padding: 20px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+/* Card */
+.card {
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.95);
+  transition: background-color 0.3s;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.input-section {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-input[type="text"] {
-  flex-grow: 1;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  padding: 10px 15px;
-  background-color: #5cb85c;
+/* Dark mode */
+body.dark-mode .card {
+  background-color: rgba(30, 30, 30, 0.95);
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+}
+body.dark-mode .form-control {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+body.dark-mode .btn-primary {
+  background-color: #444;
+}
+body.dark-mode .list-group-item {
+  background-color: #222;
+  color: white;
+}
+body.dark-mode .remove-btn {
+  color: #f88;
 }
 
-button:hover {
-  background-color: #4cae4c;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: #f9f9f9;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+/* Task list item */
+.list-group-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
 }
 
-li button {
-  background-color: transparent;
+/* Hover effect */
+.list-group-item:hover {
+  background-color: #f0f8ff;
+}
+body.dark-mode .list-group-item:hover {
+  background-color: #333;
+}
+
+/* Remove button */
+.remove-btn {
+  background: none;
   border: none;
-  color: red;
-  font-size: 16px;
+  color: #dc3545;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.remove-btn:hover {
+  transform: scale(1.2);
+  color: #a71d2a;
+}
+
+/* Completed task style */
+.completed span {
+  text-decoration: line-through;
+  color: gray;
+}
+body.dark-mode .completed span {
+  color: #999;
 }
